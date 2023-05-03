@@ -3,11 +3,13 @@ import { Sidebar } from '@/components';
 
 export function Root() {
   return (
-    <div className='flex h-screen p-6 text-base dark:bg-slate-800 dark:text-slate-300'>
+    <div className='p- flex h-screen p-6 text-base dark:bg-slate-800 dark:text-slate-300'>
       <Sidebar />
       <main className='grow'>
         <h1 className='text-center'>Hello World!</h1>
-        <Outlet />
+        <div className='flex h-full items-center justify-center'>
+          <Outlet />
+        </div>
       </main>
     </div>
   );

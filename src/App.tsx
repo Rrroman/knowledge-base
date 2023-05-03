@@ -6,22 +6,40 @@ import {
 } from 'react-router-dom';
 
 import { Root } from '@/components';
+import { FeedbackElements, Inputs, NativeElements } from '@/pages';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Root />}>
-      <Route
-        path='inputs'
-        element={
-          <h1 className='flex h-full items-center justify-center'>
-            Inputs page here
-          </h1>
-        }
-      />
-      <Route path='feedback' element={<h1>Feedback page here</h1>} />
+      <Route index element={<NativeElements />} />
+      <Route path='inputs' element={<Inputs />} />
+      <Route path='feedback' element={<FeedbackElements />} />
     </Route>
   )
 );
+
+// // For compassing
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <Root />,
+//     children: [
+//       {
+//         index: true,
+//         path: '',
+//         element: <h1>Home Page</h1>,
+//       },
+//       {
+//         path: 'inputs',
+//         element: <h1>Inputs page here</h1>,
+//       },
+//       {
+//         path: 'feedback',
+//         element: <h1>Feedback page here</h1>,
+//       },
+//     ],
+//   },
+// ]);
 
 function App() {
   return <RouterProvider router={router} />;
