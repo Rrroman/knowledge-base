@@ -19,14 +19,19 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.cjs",
-    "**/*.mjs",
-    "**/*.js",
-    "src"
-  ],
+  "include": ["vite.config.ts", ".eslintrc.cjs", "src"],
+
+  // Something went wrong with eslint file error
+  // "include": [
+  //   ".eslintrc.cjs",
+  //   "next-env.d.ts",
+  //   "**/*.ts",
+  //   "**/*.tsx",
+  //   "**/*.cjs",
+  //   "**/*.mjs",
+  //   "**/*.js",
+  //   "src"
+  // ],
+
   "references": [{ "path": "./tsconfig.node.json" }]
 }

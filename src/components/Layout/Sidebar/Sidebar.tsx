@@ -1,18 +1,53 @@
 import { NavLink } from 'react-router-dom';
+import { Expand } from '@/components/UI';
+
+type Children = {
+  name: string;
+  path: string;
+  hidden?: boolean;
+};
+
+type NavigationData = {
+  name: string;
+  children: Children[];
+}[];
 
 function Sidebar() {
-  const navLinks = [
-    ['Native Elements', '/'],
-    ['Inputs', '/inputs'],
-    ['Feedback', '/feedback'],
+  const navigationData: NavigationData = [
+    {
+      name: 'Native HTML Elements',
+      children: [
+        { name: 'Dialog', path: 'native-elements/dialog', hidden: false },
+        { name: 'Fieldset', path: 'fieldset', hidden: true },
+        { name: 'Datalist', path: 'datalist', hidden: true },
+        { name: 'Color Picker', path: 'color-picker', hidden: true },
+        { name: 'Progress Bar', path: 'progress-bar', hidden: true },
+        { name: 'Open Graph', path: 'open-graph', hidden: true },
+        { name: 'Sub/Sup', path: 'sub-sup', hidden: true },
+        { name: 'Picture', path: 'picture', hidden: true },
+      ],
+    },
+    { name: 'Inputs', children: [{ name: 'Expand', path: '/inputs' }] },
+    { name: 'Feedback', children: [{ name: 'Feedback', path: '/feedback' }] },
   ];
 
   return (
     <nav className='flex self-center'>
       <ul className='space-y-4'>
-        {navLinks.map((link) => (
-          <li key={link[0]}>
-            <NavLink to={link[1]}>{link[0]}</NavLink>
+        {navigationData.map((group) => (
+          <li key={group.name}>
+            <Expand title={group.name}>
+              <ul>
+                {group.children.map((element) => (
+                  <li
+                    key={element.name}
+                    className={`pl-3 ${element.hidden && 'hidden'}`}
+                  >
+                    <NavLink to={element.path}>{element.name}</NavLink>
+                  </li>
+                ))}
+              </ul>
+            </Expand>
           </li>
         ))}
       </ul>
