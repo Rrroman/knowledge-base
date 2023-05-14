@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { Button } from '@/components/UI';
 
 export function Expand({
@@ -9,6 +9,7 @@ export function Expand({
   children: React.ReactNode;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const contentId = useId();
 
   // Off rule that enforce to use useCallback instead of passing a function
   // Which was intended to enforce that bind or arrow functions are not used in props
@@ -24,10 +25,14 @@ export function Expand({
 
   return (
     <>
-      <Button ariaExpanded={isOpen} clickHandler={toggleHandler}>
+      <Button
+        ariaControls={contentId}
+        ariaExpanded={isOpen}
+        clickHandler={toggleHandler}
+      >
         {title}
       </Button>
-      <div>{isOpen && children}</div>
+      <div id={contentId}>{isOpen && children}</div>
     </>
   );
 }
