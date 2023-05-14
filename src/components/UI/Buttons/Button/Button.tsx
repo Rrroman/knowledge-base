@@ -1,5 +1,5 @@
-type ButtonType = JSX.IntrinsicElements['button']['type'];
-// type ButtonType = React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
+// type ButtonType = JSX.IntrinsicElements['button']['type'];
+type ButtonType = React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
 // type ButtonType = Pick<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type'>;
 
 // Off rule that enforce to use DefaultProps instead of adding default in props
@@ -14,8 +14,9 @@ type ButtonType = JSX.IntrinsicElements['button']['type'];
 
 type ButtonProps = {
   children: React.ReactNode;
-  type?: ButtonType;
+  className?: string;
   clickHandler: () => void;
+  type?: ButtonType;
   ariaExpanded?: boolean;
   ariaControls?: string;
 };
@@ -23,8 +24,9 @@ type ButtonProps = {
 export function Button(props: ButtonProps) {
   const {
     children,
-    type = 'button',
     clickHandler,
+    className,
+    type = 'button',
     ariaExpanded,
     ariaControls,
   } = props;
@@ -35,6 +37,7 @@ export function Button(props: ButtonProps) {
       onClick={clickHandler}
       aria-expanded={ariaExpanded}
       aria-controls={ariaControls}
+      className={className}
     >
       {children}
     </button>

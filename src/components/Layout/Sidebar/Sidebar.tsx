@@ -27,8 +27,8 @@ function Sidebar() {
         { name: 'Picture', path: 'picture', hidden: true },
       ],
     },
-    { name: 'Inputs', children: [{ name: 'Expand', path: '/inputs' }] },
-    { name: 'Feedback', children: [{ name: 'Feedback', path: '/feedback' }] },
+    // { name: 'Inputs', children: [{ name: 'Expand', path: '/inputs' }] },
+    // { name: 'Feedback', children: [{ name: 'Feedback', path: '/feedback' }] },
   ];
 
   return (
@@ -41,9 +41,11 @@ function Sidebar() {
                 {group.children.map((element) => (
                   <li
                     key={element.name}
-                    className={`pl-3 ${element.hidden && 'hidden'}`}
+                    className={` ${element.hidden && 'hidden'}`}
                   >
-                    <NavLink to={element.path}>{element.name}</NavLink>
+                    <NavLink to={element.path} className='inline-block w-full'>
+                      {element.name}
+                    </NavLink>
                   </li>
                 ))}
               </ul>
