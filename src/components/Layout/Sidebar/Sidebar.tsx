@@ -27,13 +27,18 @@ function Sidebar() {
         { name: 'Picture', path: 'picture', hidden: true },
       ],
     },
-    // { name: 'Inputs', children: [{ name: 'Expand', path: '/inputs' }] },
+    { name: 'Inputs', children: [{ name: 'Expand', path: 'inputs/expand' }] },
     // { name: 'Feedback', children: [{ name: 'Feedback', path: '/feedback' }] },
   ];
 
   return (
     <nav className='flex self-center'>
       <ul className='space-y-4'>
+        <li>
+          <NavLink to='/' className='inline-block w-full'>
+            Home Page
+          </NavLink>
+        </li>
         {navigationData.map((group) => (
           <li key={group.name}>
             <Expand title={group.name}>
@@ -41,7 +46,7 @@ function Sidebar() {
                 {group.children.map((element) => (
                   <li
                     key={element.name}
-                    className={` ${element.hidden && 'hidden'}`}
+                    className={`pl-4 ${element.hidden && 'hidden'}`}
                   >
                     <NavLink to={element.path} className='inline-block w-full'>
                       {element.name}

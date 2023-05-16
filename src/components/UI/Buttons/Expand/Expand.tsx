@@ -1,12 +1,17 @@
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useId, useState } from 'react';
 import { Button } from '@/components/UI';
 
 export function Expand({
   title,
   children,
+  openStyles,
+  transitionStyles,
 }: {
   title: string;
   children: React.ReactNode;
+  openStyles?: string;
+  transitionStyles?: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const contentId = useId();
@@ -24,19 +29,22 @@ export function Expand({
   }
 
   return (
-    <>
+    <div className='flex flex-col items-start'>
       <Button
         ariaControls={contentId}
         ariaExpanded={isOpen}
         clickHandler={toggleHandler}
       >
-        <span>{title}</span>
+        {title}
+        <div className={`${isOpen && 'rotate-90'} inline-block duration-500`}>
+          <KeyboardArrowRightIcon />
+        </div>
       </Button>
       <div
         aria-hidden={!isOpen}
         className={`${
-          isOpen ? 'grid-rows-[1fr] p-2' : ' grid-rows-[0fr]'
-        } transition-[grid-template-rows, padding] grid duration-500`}
+          isOpen ? `grid-rows-[1fr] ${openStyles}` : 'grid-rows-[0fr]'
+        } transition-[grid-template-rows, ${transitionStyles}] grid duration-500`}
       >
         <div className='overflow-hidden'>
           <div id={contentId}>{children}</div>
@@ -59,6 +67,6 @@ export function Expand({
           </div>
         </div>
       </div> */}
-    </>
+    </div>
   );
 }

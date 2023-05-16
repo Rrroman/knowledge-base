@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 
-import { Root } from '@/components';
+import { Root } from '@/components/Layout';
 import { FeedbackElements, Inputs, NativeElements } from '@/pages';
 import { Dialog } from '@/components/UI/';
 
@@ -51,6 +51,7 @@ const router = createBrowserRouter([
       {
         path: 'inputs',
         element: <Inputs />,
+        children: [{ index: true, path: 'expand', element: <Inputs /> }],
       },
       {
         path: 'feedback',
