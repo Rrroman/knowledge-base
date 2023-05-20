@@ -17,7 +17,7 @@ function Sidebar() {
     {
       name: 'Native HTML Elements',
       children: [
-        { name: 'Dialog', path: 'native-elements/dialog', hidden: false },
+        { name: 'Dialog', path: 'native-elements/dialogs', hidden: false },
         { name: 'Fieldset', path: 'fieldset', hidden: true },
         { name: 'Datalist', path: 'datalist', hidden: true },
         { name: 'Color Picker', path: 'color-picker', hidden: true },

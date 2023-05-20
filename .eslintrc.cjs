@@ -26,5 +26,6 @@ module.exports = {
     'react/button-has-type': 'off',
     'react/jsx-no-bind': 'off',
     'react/require-default-props': 'off',
+    'react/no-unescaped-entities': 'off',
   },
 };

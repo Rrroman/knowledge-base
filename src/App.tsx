@@ -6,8 +6,7 @@ import {
 } from 'react-router-dom';
 
 import { Root } from '@/components/Layout';
-import { FeedbackElements, Inputs, NativeElements } from '@/pages';
-import { Dialog } from '@/components/UI/';
+import { Dialogs, FeedbackElements, Inputs, NativeElements } from '@/pages';
 
 // const router1 = createBrowserRouter(
 //   createRoutesFromElements(
@@ -38,7 +37,7 @@ const router = createBrowserRouter([
         element: <NativeElements />,
         path: 'native-elements',
         children: [
-          { index: true, path: 'dialog', element: <Dialog /> },
+          { index: true, path: 'dialogs', element: <Dialogs /> },
           { path: 'fieldset' },
           { path: 'datalist' },
           { path: 'color-picker' },
