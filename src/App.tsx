@@ -34,11 +34,10 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        element: <NativeElements />,
         path: 'native-elements',
+        element: <NativeElements />,
         children: [
           { index: true, path: 'dialogs', element: <Dialogs /> },
-          { path: 'fieldset' },
           { path: 'datalist' },
           { path: 'color-picker' },
           { path: 'progress-bar' },

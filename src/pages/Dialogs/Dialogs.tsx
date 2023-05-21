@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Dialog } from '@/components/UI';
+import { Dialog, Separator } from '@/components/UI';
 
 function Dialogs() {
   const [isOpened, setIsOpened] = useState(false);
@@ -14,7 +14,7 @@ function Dialogs() {
   }
 
   return (
-    <div>
+    <div className='flex w-full flex-col items-center'>
       <button
         className='group relative mb-2 mr-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 group-hover:from-purple-600 group-hover:to-blue-500 dark:text-white dark:focus:ring-blue-800'
         onClick={() => setIsOpened(true)}
@@ -23,7 +23,6 @@ function Dialogs() {
           Open "dialog" modal
         </span>
       </button>
-
       <Dialog
         title='Dialog modal example'
         isOpened={isOpened}
@@ -33,6 +32,7 @@ function Dialogs() {
         <p>To close: click Close, press Escape, or click outside.</p>
       </Dialog>
       <p className='text-center'>Proceeds count: {count}</p>
+      <Separator />
     </div>
   );
 }

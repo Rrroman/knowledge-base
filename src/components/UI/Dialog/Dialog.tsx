@@ -64,7 +64,7 @@ function Dialog({ title, isOpened, onProceed, onClose, children }: Props) {
       >
         <h3>{title}</h3>
         {children}
-        <div className='m-t mt-4 flex gap-4'>
+        <div className='mt-4 flex gap-4'>
           <button
             className='rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600'
             onClick={proceedAndClose}
