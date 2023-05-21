@@ -45,18 +45,24 @@ function Sidebar() {
         {navigationData.map((group) => (
           <li key={group.name}>
             <Expand title={group.name}>
-              <ul>
-                {group.children.map((element) => (
-                  <li
-                    key={element.name}
-                    className={`pl-4 ${element.hidden && 'hidden'}`}
-                  >
-                    <NavLink to={element.path} className='inline-block w-full'>
-                      {element.name}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
+              {(isHidden: boolean) => (
+                <ul>
+                  {group.children.map((element) => (
+                    <li
+                      key={element.name}
+                      className={`pl-4 ${element.hidden && 'hidden'}`}
+                    >
+                      <NavLink
+                        to={element.path}
+                        className='inline-block w-full'
+                        tabIndex={isHidden ? -1 : 0}
+                      >
+                        {element.name}
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </Expand>
           </li>
         ))}

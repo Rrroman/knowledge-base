@@ -9,7 +9,7 @@ export function Expand({
   transitionStyles,
 }: {
   title: string;
-  children: React.ReactNode;
+  children: React.ReactNode | ((isHidden: boolean) => JSX.Element);
   openStyles?: string;
   transitionStyles?: string;
 }) {
@@ -47,7 +47,9 @@ export function Expand({
         } transition-[grid-template-rows, ${transitionStyles}] grid duration-500`}
       >
         <div className='overflow-hidden'>
-          <div id={contentId}>{children}</div>
+          <div id={contentId}>
+            {typeof children === 'function' ? children(!isOpen) : children}
+          </div>
         </div>
       </div>
       {/* ================================ */}
