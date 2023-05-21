@@ -18,7 +18,7 @@ function Sidebar() {
       name: 'Native HTML Elements',
       children: [
         { name: 'Dialog', path: 'native-elements/dialogs', hidden: false },
-        { name: 'Datalist', path: 'datalist', hidden: true },
+        { name: 'Datalist', path: 'native-elements/datalists', hidden: false },
         { name: 'Color Picker', path: 'color-picker', hidden: true },
         { name: 'Progress Bar', path: 'progress-bar', hidden: true },
         { name: 'Open Graph', path: 'open-graph', hidden: true },
@@ -37,7 +37,6 @@ function Sidebar() {
           <NavLink
             className='relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900'
             to='/'
-            // className='inline-block w-full'
           >
             Home Page
           </NavLink>

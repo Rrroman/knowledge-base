@@ -6,14 +6,19 @@ import {
 } from 'react-router-dom';
 
 import { Root } from '@/components/Layout';
-import { Dialogs, FeedbackElements, Inputs, NativeElements } from '@/pages';
+import {
+  Dialogs,
+  FeedbackElements,
+  Inputs,
+  NativeElements,
+  Datalists,
+} from '@/pages';
 
 // const router1 = createBrowserRouter(
 //   createRoutesFromElements(
 //     <Route path='/' element={<Root />}>
 //       <Route element={<NativeElements />}>
 //         <Route index path='dialog' element={<Dialog />} />
-//         <Route path='fieldset' element={<Fieldset />} />
 //         <Route path='datalist' element={<Datalist />} />
 //         <Route path='color-picker' element={<ColorPicker />} />
 //         <Route path='progress-bar' element={<ProgressBar />} />
@@ -38,7 +43,7 @@ const router = createBrowserRouter([
         element: <NativeElements />,
         children: [
           { index: true, path: 'dialogs', element: <Dialogs /> },
-          { path: 'datalist' },
+          { path: 'datalists', element: <Datalists /> },
           { path: 'color-picker' },
           { path: 'progress-bar' },
           { path: 'open-graph' },
