@@ -84,3 +84,5 @@ function Dialog({ title, isOpened, onProceed, onClose, children }: Props) {
 }
 
 export { Dialog };
+
+// https://dev.to/elsyng/react-modal-dialog-using-html-dialog-element-5afk
