@@ -45,7 +45,7 @@ function Sidebar() {
         {navigationData.map((group) => (
           <li key={group.name}>
             <Expand title={group.name}>
-              {/* Is this render children pattern? :D */}
+              {/* Pattern to pass props to children */}
               {(isHidden: boolean) => (
                 <ul>
                   {group.children.map((element) => (
