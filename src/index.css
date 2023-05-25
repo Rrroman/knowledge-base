@@ -5,3 +5,10 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+/** https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/ 
+* Lobotomized Owl selector to add spacing system
+*/
+* + * {
+  margin-top: 1em;
+}

@@ -31,7 +31,7 @@ function Dialogs() {
       >
         <p>To close: click Close, press Escape, or click outside.</p>
       </Dialog>
-      <p className='text-center'>Proceeds count: {count}</p>
+      <p className='mt-4 text-center'>Proceeds count: {count}</p>
       <Separator />
     </div>
   );

@@ -18,8 +18,8 @@ import {
 //   createRoutesFromElements(
 //     <Route path='/' element={<Root />}>
 //       <Route element={<NativeElements />}>
-//         <Route index path='dialog' element={<Dialog />} />
-//         <Route path='datalist' element={<Datalist />} />
+//         <Route index path='dialogs' element={<Dialogs />} />
+//         <Route path='datalists' element={<Datalists />} />
 //         <Route path='color-picker' element={<ColorPicker />} />
 //         <Route path='progress-bar' element={<ProgressBar />} />
 //         <Route path='open-graph' element={<OpenGraph />} />

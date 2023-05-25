@@ -25,7 +25,7 @@ function Datalist() {
         </datalist>
       </div>
 
-      <p>
+      <p className='text-red-400'>
         Conclusion: isn't good to use native datalist due to uncontrolled styles
         of options
       </p>
@@ -34,3 +34,5 @@ function Datalist() {
 }
 
 export { Datalist };
+
+// https://youtu.be/iX_QyjdctsQ

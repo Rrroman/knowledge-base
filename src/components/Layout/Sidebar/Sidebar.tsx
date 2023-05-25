@@ -55,7 +55,7 @@ function Sidebar() {
                       <NavLink
                         to={element.path}
                         className='inline-block w-full'
-                        tabIndex={isHidden ? -1 : 0}
+                        tabIndex={isHidden || element.hidden ? -1 : 0}
                       >
                         {element.name}
                       </NavLink>
