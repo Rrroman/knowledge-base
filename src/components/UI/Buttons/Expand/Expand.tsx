@@ -1,5 +1,5 @@
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import { useId, useState } from 'react';
+import { ReactNode, useId, useState } from 'react';
 import { Button } from '@/components/UI';
 
 export function Expand({
@@ -9,7 +9,7 @@ export function Expand({
   transitionStyles,
 }: {
   title: string;
-  children: React.ReactNode | ((isHidden: boolean) => JSX.Element);
+  children: ReactNode | ((isHidden: boolean) => JSX.Element);
   openStyles?: string;
   transitionStyles?: string;
 }) {
@@ -29,7 +29,7 @@ export function Expand({
   }
 
   return (
-    <div className='flex flex-col items-start'>
+    <>
       <Button
         ariaControls={contentId}
         ariaExpanded={isOpen}
@@ -69,7 +69,7 @@ export function Expand({
           </div>
         </div>
       </div> */}
-    </div>
+    </>
   );
 }
 

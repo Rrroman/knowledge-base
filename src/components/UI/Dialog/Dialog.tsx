@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect, useRef, useState } from 'react';
+import { MouseEvent, ReactNode, useEffect, useRef, useState } from 'react';
 
 const isClickInsideRectangle = (e: MouseEvent, element: HTMLElement) => {
   const r = element.getBoundingClientRect();
@@ -16,7 +16,7 @@ type Props = {
   isOpened: boolean;
   onProceed: () => void;
   onClose: () => void;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 function Dialog({ title, isOpened, onProceed, onClose, children }: Props) {

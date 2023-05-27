@@ -7,7 +7,8 @@ export function Root() {
       <Sidebar />
       <main className='grow pt-24'>
         <h1 className='mb-24 text-center'>Hello World!</h1>
-        <div className='flex items-center justify-center'>
+        <div className='flex w-full flex-col items-center'>
+          {/* <div className='flex items-center justify-center'> */}
           <Outlet />
         </div>
       </main>

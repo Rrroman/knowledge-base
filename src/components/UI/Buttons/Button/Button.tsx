@@ -1,6 +1,8 @@
+import { ButtonHTMLAttributes, ReactNode } from 'react';
+
 // type ButtonType = JSX.IntrinsicElements['button']['type'];
-type ButtonType = React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
-// type ButtonType = Pick<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type'>;
+type ButtonType = ButtonHTMLAttributes<HTMLButtonElement>['type'];
+// type ButtonType = Pick<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>;
 
 // Off rule that enforce to use DefaultProps instead of adding default in props
 // react/require-default-props
@@ -13,8 +15,8 @@ type ButtonType = React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
 //
 
 type ButtonProps = {
-  children: React.ReactNode;
-  className?: string;
+  children: ReactNode;
+  classNames?: string;
   clickHandler: () => void;
   type?: ButtonType;
   ariaExpanded?: boolean;
@@ -25,7 +27,7 @@ export function Button(props: ButtonProps) {
   const {
     children,
     clickHandler,
-    className,
+    classNames,
     type = 'button',
     ariaExpanded,
     ariaControls,
@@ -37,7 +39,7 @@ export function Button(props: ButtonProps) {
       onClick={clickHandler}
       aria-expanded={ariaExpanded}
       aria-controls={ariaControls}
-      className={`${className}`}
+      className={`${classNames}`}
     >
       {children}
     </button>
