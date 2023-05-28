@@ -39,7 +39,7 @@ export function Button(props: ButtonProps) {
       onClick={clickHandler}
       aria-expanded={ariaExpanded}
       aria-controls={ariaControls}
-      className={`${classNames}`}
+      className={classNames}
     >
       {children}
     </button>
