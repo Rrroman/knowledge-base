@@ -12,7 +12,10 @@ import {
   Inputs,
   NativeElements,
   Datalists,
+  Fetchers,
+  FetchersInsidePage,
 } from '@/pages';
+import { FetchExample, QueryClientExample } from './components';
 
 // const router1 = createBrowserRouter(
 //   createRoutesFromElements(
@@ -55,6 +58,19 @@ const router = createBrowserRouter([
         path: 'inputs',
         element: <Inputs />,
         children: [{ index: true, path: 'expand', element: <Inputs /> }],
+      },
+      {
+        path: 'fetchers',
+        element: <Fetchers />,
+        children: [
+          { index: true, path: 'fetch', element: <Fetchers /> },
+          { path: 'fetch-example', element: <FetchExample /> },
+          { path: 'query-client-example', element: <QueryClientExample /> },
+        ],
+      },
+      {
+        path: 'fetchers-inside-page',
+        element: <FetchersInsidePage />,
       },
       {
         path: 'feedback',

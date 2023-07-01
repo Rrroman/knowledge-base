@@ -27,6 +27,17 @@ function Sidebar() {
       ],
     },
     { name: 'Inputs', children: [{ name: 'Expand', path: 'inputs/expand' }] },
+    {
+      name: 'Fetchers',
+      children: [
+        { name: 'Fetch example', path: 'fetchers/fetch-example' },
+        { name: 'Query Client example', path: 'fetchers/query-client-example' },
+        {
+          name: 'Fetchers Example of children inside page',
+          path: 'fetchers-inside-page',
+        },
+      ],
+    },
     // { name: 'Feedback', children: [{ name: 'Feedback', path: '/feedback' }] },
   ];
 
