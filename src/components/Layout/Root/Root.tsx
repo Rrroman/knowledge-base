@@ -6,7 +6,7 @@ export function Root() {
     <div className='flex h-screen p-6 text-base dark:bg-slate-800 dark:text-slate-300'>
       <Sidebar />
       <main className='grow pt-24'>
-        <h1 className='mb-24 text-center'>Hello World!</h1>
+        <h1 className='mb-24 text-center'>🍕 Hello World! ¯\_(ツ)_/¯</h1>
         <div className='flex w-full flex-col items-center'>
           {/* <div className='flex items-center justify-center'> */}
           <Outlet />
