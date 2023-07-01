@@ -29,11 +29,11 @@ export function QueryClientExample() {
   const { isLoading, data, error, isFetching } = useSpells();
 
   if (isLoading) {
-    return 'Loading...';
+    return <h2>'Loading...'</h2>;
   }
 
   if (error) {
-    return 'Something went wrong while downloading spells';
+    return <h2>'Something went wrong while downloading spells'</h2>;
   }
 
   return (

@@ -1,4 +1,4 @@
-import { FetchExample, QueryClientExample } from '@/components';
+import { FetchExample, QueryClientExample, Separator } from '@/components';
 
 export function FetchersInsidePage() {
   return (
@@ -9,6 +9,7 @@ export function FetchersInsidePage() {
         fetches. Instead can be used outlet context to investigate...
       </h2>
       <FetchExample />
+      <Separator />
       <QueryClientExample />
     </>
   );
