@@ -37,7 +37,7 @@ export function FetchExample() {
         localStorage.setItem('spells', JSON.stringify(data.splice(0, 10)));
       } catch (err: any) {
         console.error(err);
-        setError(err);
+        setError(err.message);
       } finally {
         setLoading(false);
       }
@@ -49,7 +49,7 @@ export function FetchExample() {
   return (
     <>
       {loading && !error && <h1>Loading...</h1>}
-      <h2>Native Fetch -{'>'} useEffect example Example</h2>
+      <h2 className='mb-4'>Native Fetch with useEffect()</h2>
       <ul>
         {spells.map((spell) => (
           <li key={spell.id}>
@@ -58,7 +58,7 @@ export function FetchExample() {
           </li>
         ))}
       </ul>
-      {error && <h1>Something went wrong while downloading spells</h1>}
+      {error && <h1>Something went wrong while downloading spells: {error}</h1>}
     </>
   );
 }
