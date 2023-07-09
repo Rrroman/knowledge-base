@@ -23,13 +23,21 @@ import { FetchExample, QueryClientExample } from './components';
 //       <Route element={<NativeElements />}>
 //         <Route index path='dialogs' element={<Dialogs />} />
 //         <Route path='datalists' element={<Datalists />} />
-//         <Route path='color-picker' element={<ColorPicker />} />
-//         <Route path='progress-bar' element={<ProgressBar />} />
-//         <Route path='open-graph' element={<OpenGraph />} />
-//         <Route path='sub-sup' element={<SubSup />} />
-//         <Route path='picture' element={<Picture />} />
+//         <Route path='color-picker' />
+//         <Route path='progress-bar' />
+//         <Route path='open-graph' />
+//         <Route path='sub-sup' />
+//         <Route path='picture' />
 //       </Route>
-//       <Route path='inputs' element={<Inputs />} />
+//       <Route path='inputs' element={<Inputs />}>
+//         <Route index path='expand' element={<Inputs />} />
+//       </Route>
+//       <Route path='fetchers' element={<Fetchers />}>
+//         <Route index path='fetch' element={<Fetchers />} />
+//         <Route path='fetch-example' element={<FetchExample />} />
+//         <Route path='query-client-example' element={<QueryClientExample />} />
+//       </Route>
+//       <Route path='fetchers-inside-page' element={<FetchersInsidePage />} />
 //       <Route path='feedback' element={<FeedbackElements />} />
 //     </Route>
 //   )
