@@ -12,7 +12,13 @@ type NavigationData = {
   children: Children[];
 }[];
 
-function Sidebar() {
+function Sidebar({
+  clickHandler,
+  count,
+}: {
+  clickHandler: (num?: number) => void;
+  count: number;
+}) {
   const navigationData: NavigationData = [
     {
       name: 'Native HTML Elements',
@@ -48,8 +54,9 @@ function Sidebar() {
           <NavLink
             className='relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900'
             to='/'
+            onClick={() => clickHandler(1)}
           >
-            Home Page
+            Home Page {count > 0 && `${count}`}
           </NavLink>
         </li>
         {navigationData.map((group) => (
@@ -64,6 +71,7 @@ function Sidebar() {
                       className={`pl-4 ${element.hidden && 'hidden'}`}
                     >
                       <NavLink
+                        onClick={() => clickHandler()}
                         to={element.path}
                         className='inline-block w-full'
                         tabIndex={isHidden || element.hidden ? -1 : 0}
