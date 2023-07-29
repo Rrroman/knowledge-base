@@ -26,7 +26,7 @@ export function Expand({
   // }, [isOpen]);
 
   function toggleHandler() {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   }
 
   return (
@@ -49,7 +49,7 @@ export function Expand({
       >
         <div className='overflow-hidden'>
           <div id={contentId}>
-            {typeof children === 'function' ? children(!isOpen) : children}
+            {typeof children === 'function' ? children(isOpen) : children}
           </div>
         </div>
       </div>

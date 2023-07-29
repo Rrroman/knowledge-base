@@ -66,7 +66,7 @@ function Sidebar({
               some time later it is super confusing where isHidden has come from.
               isHidden setts in the Expand component children(!isOpen)
               */}
-              {(isHidden: boolean) => (
+              {(isOpen: boolean) => (
                 <ul>
                   {group.children.map((element) => (
                     <li
@@ -77,7 +77,7 @@ function Sidebar({
                         onClick={() => clickHandler()}
                         to={element.path}
                         className='inline-block w-full'
-                        tabIndex={isHidden || element.hidden ? -1 : 0}
+                        tabIndex={!isOpen || element.hidden ? -1 : 0}
                       >
                         {element.name}
                       </NavLink>
