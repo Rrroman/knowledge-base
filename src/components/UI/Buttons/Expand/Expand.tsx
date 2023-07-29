@@ -4,13 +4,15 @@ import { Button } from '@/components/UI';
 
 export function Expand({
   title,
-  children,
+  // children,
   openStyles,
   transitionStyles,
+  renderBody,
 }: {
   title: string;
   // children: ReactNode;
-  children: ReactNode | ((isHidden: boolean) => JSX.Element);
+  // children: ReactNode | ((isHidden: boolean) => JSX.Element);
+  renderBody: ReactNode | ((isHidden: boolean) => JSX.Element);
   openStyles?: string;
   transitionStyles?: string;
 }) {
@@ -49,7 +51,7 @@ export function Expand({
       >
         <div className='overflow-hidden'>
           <div id={contentId}>
-            {typeof children === 'function' ? children(isOpen) : children}
+            {typeof renderBody === 'function' ? renderBody(isOpen) : renderBody}
           </div>
         </div>
       </div>

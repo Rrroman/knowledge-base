@@ -61,11 +61,7 @@ function Sidebar({
         </li>
         {navigationData.map((group) => (
           <li key={group.name}>
-            <Expand title={group.name}>
-              {/* Pattern to pass props to children, 
-              some time later it is super confusing where isHidden has come from.
-              isHidden setts in the Expand component children(!isOpen)
-              */}
+            {/* <Expand title={group.name}>
               {(isOpen: boolean) => (
                 <ul>
                   {group.children.map((element) => (
@@ -85,7 +81,29 @@ function Sidebar({
                   ))}
                 </ul>
               )}
-            </Expand>
+            </Expand> */}
+            <Expand
+              title={group.name}
+              renderBody={(isOpen: boolean) => (
+                <ul>
+                  {group.children.map((element) => (
+                    <li
+                      key={element.name}
+                      className={`pl-4 ${element.hidden && 'hidden'}`}
+                    >
+                      <NavLink
+                        onClick={() => clickHandler()}
+                        to={element.path}
+                        className='inline-block w-full'
+                        tabIndex={!isOpen || element.hidden ? -1 : 0}
+                      >
+                        {element.name}
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            />
           </li>
         ))}
       </ul>
