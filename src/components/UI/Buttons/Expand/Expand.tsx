@@ -9,6 +9,7 @@ export function Expand({
   transitionStyles,
 }: {
   title: string;
+  // children: ReactNode;
   children: ReactNode | ((isHidden: boolean) => JSX.Element);
   openStyles?: string;
   transitionStyles?: string;

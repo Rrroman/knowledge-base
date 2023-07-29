@@ -62,7 +62,10 @@ function Sidebar({
         {navigationData.map((group) => (
           <li key={group.name}>
             <Expand title={group.name}>
-              {/* Pattern to pass props to children */}
+              {/* Pattern to pass props to children, 
+              some time later it is super confusing where isHidden has come from.
+              isHidden setts in the Expand component children(!isOpen)
+              */}
               {(isHidden: boolean) => (
                 <ul>
                   {group.children.map((element) => (
