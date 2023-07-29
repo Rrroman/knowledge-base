@@ -1,19 +1,19 @@
 import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
+	createBrowserRouter,
+	createRoutesFromElements,
+	Route,
+	RouterProvider,
 } from 'react-router-dom';
 
 import { Root } from '@/components/Layout';
 import {
-  Dialogs,
-  FeedbackElements,
-  Inputs,
-  NativeElements,
-  Datalists,
-  Fetchers,
-  FetchersInsidePage,
+	Dialogs,
+	FeedbackElements,
+	Inputs,
+	NativeElements,
+	Datalists,
+	Fetchers,
+	FetchersInsidePage,
 } from '@/pages';
 import { FetchExample, QueryClientExample } from './components';
 
@@ -45,51 +45,51 @@ import { FetchExample, QueryClientExample } from './components';
 
 // For compassing
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root />,
-    children: [
-      {
-        path: 'native-elements',
-        element: <NativeElements />,
-        children: [
-          { index: true, path: 'dialogs', element: <Dialogs /> },
-          { path: 'datalists', element: <Datalists /> },
-          { path: 'color-picker' },
-          { path: 'progress-bar' },
-          { path: 'open-graph' },
-          { path: 'sub-sup' },
-          { path: 'picture' },
-        ],
-      },
-      {
-        path: 'inputs',
-        element: <Inputs />,
-        children: [{ index: true, path: 'expand', element: <Inputs /> }],
-      },
-      {
-        path: 'fetchers',
-        element: <Fetchers />,
-        children: [
-          { index: true, path: 'fetch', element: <Fetchers /> },
-          { path: 'fetch-example', element: <FetchExample /> },
-          { path: 'query-client-example', element: <QueryClientExample /> },
-        ],
-      },
-      {
-        path: 'fetchers-inside-page',
-        element: <FetchersInsidePage />,
-      },
-      {
-        path: 'feedback',
-        element: <FeedbackElements />,
-      },
-    ],
-  },
+	{
+		path: '/',
+		element: <Root />,
+		children: [
+			{
+				path: 'native-elements',
+				element: <NativeElements />,
+				children: [
+					{ index: true, path: 'dialogs', element: <Dialogs /> },
+					{ path: 'datalists', element: <Datalists /> },
+					{ path: 'color-picker' },
+					{ path: 'progress-bar' },
+					{ path: 'open-graph' },
+					{ path: 'sub-sup' },
+					{ path: 'picture' },
+				],
+			},
+			{
+				path: 'inputs',
+				element: <Inputs />,
+				children: [{ index: true, path: 'expand', element: <Inputs /> }],
+			},
+			{
+				path: 'fetchers',
+				element: <Fetchers />,
+				children: [
+					{ index: true, path: 'fetch', element: <Fetchers /> },
+					{ path: 'fetch-example', element: <FetchExample /> },
+					{ path: 'query-client-example', element: <QueryClientExample /> },
+				],
+			},
+			{
+				path: 'fetchers-inside-page',
+				element: <FetchersInsidePage />,
+			},
+			{
+				path: 'feedback',
+				element: <FeedbackElements />,
+			},
+		],
+	},
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+	return <RouterProvider router={router} />;
 }
 
 export default App;

@@ -8,12 +8,12 @@ import './index.css';
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <App />
-      <div className='mt-0'>
-        <ReactQueryDevtools initialIsOpen={false} />
-      </div>
-    </QueryClientProvider>
-  </StrictMode>
+	<StrictMode>
+		<QueryClientProvider client={queryClient}>
+			<App />
+			<div className='mt-0'>
+				<ReactQueryDevtools initialIsOpen={false} />
+			</div>
+		</QueryClientProvider>
+	</StrictMode>
 );

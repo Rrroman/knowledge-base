@@ -4,63 +4,63 @@ import { useEffect, useState } from 'react';
 const url = 'https://wizard-world-api.herokuapp.com/Spells';
 
 type Spell = {
-  id: string;
-  name: string;
-  incantation: string;
-  effect: string;
-  canBeVerbal: boolean;
-  type: string;
-  light: string;
-  creator: null | string;
+	id: string;
+	name: string;
+	incantation: string;
+	effect: string;
+	canBeVerbal: boolean;
+	type: string;
+	light: string;
+	creator: null | string;
 };
 
 type CachedSpell = Spell[];
 
 export function FetchExample() {
-  const [spells, setSpells] = useState<CachedSpell>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+	const [spells, setSpells] = useState<CachedSpell>([]);
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState('');
 
-  useEffect(() => {
-    const cachedSpells = localStorage.getItem('spells');
-    if (cachedSpells) {
-      setSpells(JSON.parse(cachedSpells));
-      return;
-    }
+	useEffect(() => {
+		const cachedSpells = localStorage.getItem('spells');
+		if (cachedSpells) {
+			setSpells(JSON.parse(cachedSpells));
+			return;
+		}
 
-    async function getSpells() {
-      try {
-        setLoading(true);
-        const response = await fetch(url);
-        const data = await response.json();
-        setSpells(data);
-        localStorage.setItem('spells', JSON.stringify(data.splice(0, 10)));
-      } catch (err: any) {
-        console.error(err);
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    }
+		async function getSpells() {
+			try {
+				setLoading(true);
+				const response = await fetch(url);
+				const data = await response.json();
+				setSpells(data);
+				localStorage.setItem('spells', JSON.stringify(data.splice(0, 10)));
+			} catch (err: any) {
+				console.error(err);
+				setError(err.message);
+			} finally {
+				setLoading(false);
+			}
+		}
 
-    getSpells();
-  }, []);
+		getSpells();
+	}, []);
 
-  return (
-    <>
-      {loading && !error && <h1>Loading...</h1>}
-      <h2 className='mb-4'>Native Fetch with useEffect()</h2>
-      <ul>
-        {spells.map((spell) => (
-          <li key={spell.id}>
-            Spell: {spell.name}({spell.type}). {spell.incantation} -{' '}
-            {spell.effect}
-          </li>
-        ))}
-      </ul>
-      {error && <h1>Something went wrong while downloading spells: {error}</h1>}
-    </>
-  );
+	return (
+		<>
+			{loading && !error && <h1>Loading...</h1>}
+			<h2 className='mb-4'>Native Fetch with useEffect()</h2>
+			<ul>
+				{spells.map((spell) => (
+					<li key={spell.id}>
+						Spell: {spell.name}({spell.type}). {spell.incantation} -{' '}
+						{spell.effect}
+					</li>
+				))}
+			</ul>
+			{error && <h1>Something went wrong while downloading spells: {error}</h1>}
+		</>
+	);
 }
 
 // In case of api broken just sample of 10 spells

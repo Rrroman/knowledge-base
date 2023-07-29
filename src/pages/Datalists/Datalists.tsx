@@ -1,7 +1,7 @@
 import { Datalist } from '@/components/UI';
 
 function Datalists() {
-  return <Datalist />;
+	return <Datalist />;
 }
 
 export { Datalists };

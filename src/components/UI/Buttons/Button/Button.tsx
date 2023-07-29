@@ -15,33 +15,33 @@ type ButtonType = ButtonHTMLAttributes<HTMLButtonElement>['type'];
 //
 
 type ButtonProps = {
-  children: ReactNode;
-  classNames?: string;
-  clickHandler: () => void;
-  type?: ButtonType;
-  ariaExpanded?: boolean;
-  ariaControls?: string;
+	children: ReactNode;
+	classNames?: string;
+	clickHandler: () => void;
+	type?: ButtonType;
+	ariaExpanded?: boolean;
+	ariaControls?: string;
 };
 
 export function Button(props: ButtonProps) {
-  const {
-    children,
-    clickHandler,
-    classNames,
-    type = 'button',
-    ariaExpanded,
-    ariaControls,
-  } = props;
+	const {
+		children,
+		clickHandler,
+		classNames,
+		type = 'button',
+		ariaExpanded,
+		ariaControls,
+	} = props;
 
-  return (
-    <button
-      type={type}
-      onClick={clickHandler}
-      aria-expanded={ariaExpanded}
-      aria-controls={ariaControls}
-      className={classNames}
-    >
-      {children}
-    </button>
-  );
+	return (
+		<button
+			type={type}
+			onClick={clickHandler}
+			aria-expanded={ariaExpanded}
+			aria-controls={ariaControls}
+			className={classNames}
+		>
+			{children}
+		</button>
+	);
 }
