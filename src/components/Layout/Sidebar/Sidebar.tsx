@@ -44,6 +44,10 @@ function Sidebar({
 				},
 			],
 		},
+		{
+			name: 'Cards',
+			children: [{ name: 'Card', path: 'cards' }],
+		},
 		// { name: 'Feedback', children: [{ name: 'Feedback', path: '/feedback' }] },
 	];
 

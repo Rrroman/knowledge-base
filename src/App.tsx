@@ -16,6 +16,7 @@ import {
 	FetchersInsidePage,
 } from '@/pages';
 import { FetchExample, QueryClientExample } from './components';
+import { Cards } from './pages/Cards/Cards';
 
 // const router1 = createBrowserRouter(
 //   createRoutesFromElements(
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
 			{
 				path: 'feedback',
 				element: <FeedbackElements />,
+			},
+			{
+				path: 'cards',
+				element: <Cards />,
 			},
 		],
 	},

@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import { Sidebar } from '@/components/Layout';
+import { Counter } from '@/components/UI/Counter/Counter';
 
 export function Root() {
 	// test Vite's .env
@@ -11,9 +12,11 @@ export function Root() {
 	};
 
 	return (
-		<div className='flex h-screen overflow-hidden p-6 text-base dark:bg-slate-800 dark:text-slate-300'>
+		<div className='flex min-h-screen overflow-hidden p-6 text-base dark:bg-slate-800 dark:text-slate-300'>
 			<Sidebar clickHandler={clickHandler} count={count} />
 			<main className='grow pt-24'>
+				{/* // Using outside of context provider will throw error
+				<Counter /> */}
 				<h1 className='mb-24 text-center'>
 					🍕 Hello World! ¯\_(ツ)_/¯ win + .
 				</h1>
