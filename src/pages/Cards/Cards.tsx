@@ -5,7 +5,7 @@ import { CounterContextProvider } from '@/store/CounterProvider';
 export function Cards() {
 	return (
 		<CounterContextProvider>
-			<Card styles='max-w-full'>
+			<Card>
 				<h1>Card</h1>
 				<Counter />
 				<Card styles='max-w-7xl'>
