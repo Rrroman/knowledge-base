@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import { Sidebar } from '@/components/Layout';
+// import { Counter } from '@/features/counter/Counter';
 // import { Counter } from '@/components/UI/Counter/Counter';
 
 export function Root() {

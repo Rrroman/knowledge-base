@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-export const CounterContext = createContext({
+export const SimpleCounterContext = createContext({
 	isUsedOutsideOfProvider: true,
 	count: 0,
 	increment: () => {},

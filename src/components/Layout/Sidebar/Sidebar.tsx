@@ -48,6 +48,10 @@ function Sidebar({
 			name: 'Cards',
 			children: [{ name: 'Card', path: 'cards' }],
 		},
+		{
+			name: 'Redux',
+			children: [{ name: 'Redux Counter', path: 'redux-counter' }],
+		},
 		// { name: 'Feedback', children: [{ name: 'Feedback', path: '/feedback' }] },
 	];
 

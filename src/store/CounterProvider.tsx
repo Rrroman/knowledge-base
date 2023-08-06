@@ -1,14 +1,18 @@
 import { ReactNode, createContext, useMemo, useState } from 'react';
-import { CounterContext } from './CounterContext';
+import { SimpleCounterContext } from './SimpleCounterContext';
 
 // Without separate file 🤔
-// export const CounterContext = createContext({
+// export const SimpleCounterContext = createContext({
 // 	count: 0,
 // 	increment: () => {},
 // 	reset: () => {},
 // });
 
-export function CounterContextProvider({ children }: { children: ReactNode }) {
+export function SimpleCounterContextProvider({
+	children,
+}: {
+	children: ReactNode;
+}) {
 	const [count, setCount] = useState(0);
 
 	const increment = (num = 1) => {
@@ -19,20 +23,20 @@ export function CounterContextProvider({ children }: { children: ReactNode }) {
 		setCount(0);
 	};
 
-	const counterContextDefault = useMemo(
+	const SimpleCounterContextDefault = useMemo(
 		() => ({ count, increment, reset, isUsedOutsideOfProvider: false }),
 		[count]
 	);
 
 	// Eslint error - object changes every render
-	// const counterContextDefault = {
+	// const SimpleCounterContextDefault = {
 	// 	count,
 	// 	increment,
 	// };
 
 	return (
-		<CounterContext.Provider value={counterContextDefault}>
+		<SimpleCounterContext.Provider value={SimpleCounterContextDefault}>
 			{children}
-		</CounterContext.Provider>
+		</SimpleCounterContext.Provider>
 	);
 }

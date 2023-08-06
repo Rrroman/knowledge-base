@@ -27,5 +27,6 @@ module.exports = {
 		'react/jsx-no-bind': 'off',
 		'react/require-default-props': 'off',
 		'react/no-unescaped-entities': 'off',
+		'no-param-reassign': 'off',
 	},
 };

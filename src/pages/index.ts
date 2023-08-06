@@ -5,3 +5,4 @@ export * from './Fetchers';
 export * from './FetchersInsidePage';
 export * from './Inputs';
 export * from './NativeElements';
+export * from './Redux';

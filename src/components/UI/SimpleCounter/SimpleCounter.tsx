@@ -1,10 +1,11 @@
 import { useContext } from 'react';
-import { CounterContext } from '@/store/CounterContext';
+import { SimpleCounterContext } from '@/store/SimpleCounterContext';
 import { Button } from '../Buttons';
 
-export function Counter() {
-	const counterContext = useContext(CounterContext);
-	const { count, increment, reset, isUsedOutsideOfProvider } = counterContext;
+export function SimpleCounter() {
+	const simpleCounterContext = useContext(SimpleCounterContext);
+	const { count, increment, reset, isUsedOutsideOfProvider } =
+		simpleCounterContext;
 
 	if (isUsedOutsideOfProvider) {
 		throw new Error(

@@ -14,6 +14,7 @@ import {
 	Datalists,
 	Fetchers,
 	FetchersInsidePage,
+	Redux,
 } from '@/pages';
 import { FetchExample, QueryClientExample } from './components';
 import { Cards } from './pages/Cards/Cards';
@@ -88,6 +89,11 @@ const router = createBrowserRouter([
 			{
 				path: 'cards',
 				element: <Cards />,
+			},
+			{
+				path: 'redux-counter',
+				element: <Redux />,
+				// children: [{index: true, path: '', element: ''}]
 			},
 		],
 	},
