@@ -17,7 +17,12 @@ import {
 	Redux,
 	ReactRouterLoaders,
 } from '@/pages';
-import { FetchExample, QueryClientExample, spellsLoader } from '@/components';
+import {
+	Error,
+	FetchExample,
+	QueryClientExample,
+	spellsLoader,
+} from '@/components';
 import { Cards } from './pages/Cards/Cards';
 
 // const router1 = createBrowserRouter(
@@ -51,6 +56,7 @@ const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <Root />,
+		errorElement: <Error />,
 		children: [
 			{
 				path: 'native-elements',
@@ -73,6 +79,7 @@ const router = createBrowserRouter([
 			{
 				path: 'fetchers',
 				element: <Fetchers />,
+				errorElement: <Error />,
 				children: [
 					{ index: true, path: 'fetch', element: <Fetchers /> },
 					{ path: 'fetch-example', element: <FetchExample /> },
