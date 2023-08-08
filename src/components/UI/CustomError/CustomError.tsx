@@ -1,15 +1,20 @@
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 import { LinkButton } from '@/components';
 
-export function Error() {
+type RouteError = Error | string | unknown;
+
+// Type guard function
+function isError(error: RouteError): error is Error {
+	return error instanceof Error;
+}
+
+export function CustomError() {
 	const error = useRouteError();
-	console.log(error);
 	let errorMessage: string;
 
 	if (isRouteErrorResponse(error)) {
-		// error is type `ErrorResponse`
 		errorMessage = error.error?.message || error.statusText;
-	} else if (error instanceof Error) {
+	} else if (isError(error)) {
 		errorMessage = error.message;
 	} else if (typeof error === 'string') {
 		errorMessage = error;

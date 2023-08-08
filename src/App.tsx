@@ -18,7 +18,7 @@ import {
 	ReactRouterLoaders,
 } from '@/pages';
 import {
-	Error,
+	CustomError,
 	FetchExample,
 	QueryClientExample,
 	spellsLoader,
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <Root />,
-		errorElement: <Error />,
+		errorElement: <CustomError />,
 		children: [
 			{
 				path: 'native-elements',
@@ -79,7 +79,7 @@ const router = createBrowserRouter([
 			{
 				path: 'fetchers',
 				element: <Fetchers />,
-				errorElement: <Error />,
+				errorElement: <CustomError />,
 				children: [
 					{ index: true, path: 'fetch', element: <Fetchers /> },
 					{ path: 'fetch-example', element: <FetchExample /> },

@@ -38,6 +38,7 @@ export function ReactRouterLoaderExample() {
 }
 
 export const spellsLoader = (async () => {
+	// throw new Error('Oh no where are my spells?');
 	const cachedSpells = localStorage.getItem('spells');
 	if (cachedSpells) {
 		return JSON.parse(cachedSpells);
