@@ -42,6 +42,10 @@ function Sidebar({
 					name: 'Fetchers Example of children inside page',
 					path: 'fetchers-inside-page',
 				},
+				{
+					name: 'React Router Loaders',
+					path: 'fetchers/react-router-loaders',
+				},
 			],
 		},
 		{

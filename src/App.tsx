@@ -15,8 +15,9 @@ import {
 	Fetchers,
 	FetchersInsidePage,
 	Redux,
+	ReactRouterLoaders,
 } from '@/pages';
-import { FetchExample, QueryClientExample } from './components';
+import { FetchExample, QueryClientExample, spellsLoader } from '@/components';
 import { Cards } from './pages/Cards/Cards';
 
 // const router1 = createBrowserRouter(
@@ -76,6 +77,12 @@ const router = createBrowserRouter([
 					{ index: true, path: 'fetch', element: <Fetchers /> },
 					{ path: 'fetch-example', element: <FetchExample /> },
 					{ path: 'query-client-example', element: <QueryClientExample /> },
+					{
+						path: 'react-router-loaders',
+						element: <ReactRouterLoaders />,
+						id: 'react-router-loaders',
+						loader: spellsLoader,
+					},
 				],
 			},
 			{
