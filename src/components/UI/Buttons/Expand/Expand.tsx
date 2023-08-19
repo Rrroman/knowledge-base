@@ -40,6 +40,7 @@ export function Expand({
 			>
 				<div className='overflow-hidden'>
 					<div id={contentId}>
+						{/* Other solution cloneElement(children, { isOpen }); will not work only if children is a Functional Component that will receive props */}
 						{typeof renderBody === 'function' ? renderBody(isOpen) : renderBody}
 					</div>
 				</div>

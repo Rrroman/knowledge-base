@@ -1,4 +1,3 @@
-// import { useEffect, useState } from 'react';
 import { LoaderFunction, useLoaderData, useNavigation } from 'react-router-dom';
 
 // Swagger - https://wizard-world-api.herokuapp.com/swagger/index.html

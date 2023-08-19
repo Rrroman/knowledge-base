@@ -73,6 +73,7 @@ function Sidebar({
 				</li>
 				{navigationData.map((group) => (
 					<li key={group.name}>
+						{/* Example how to render children and pass props to them - using function that will accept props */}
 						{/* <Expand title={group.name}>
               {(isOpen: boolean) => (
                 <ul>
@@ -94,6 +95,8 @@ function Sidebar({
                 </ul>
               )}
             </Expand> */}
+
+						{/* Example how to render children and pass props to them - using render props pattern. Passing function as props to component to render children with additional props */}
 						<Expand
 							title={group.name}
 							renderBody={(isOpen: boolean) => (
